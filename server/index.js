@@ -20,7 +20,7 @@ app.use(express.static(path.join(__dirname, '../public')))
 app.use('/api', require('./api'));
 
 // status html
-app.get('/*', (req, res, next) => {
+app.get('*', (req, res, next) => {
 	res.sendFile(path.join(__dirname, '../public/index.html'))
 })
 

@@ -28,7 +28,7 @@ app.get('*', (req, res, next) => {
 })
 
 // sync database
-db.sync()
+db.sync({force: true})
 	.then(() => {
 		// start server
 		app.listen(8080, () => {

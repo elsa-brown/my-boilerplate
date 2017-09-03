@@ -2,6 +2,9 @@
 
 const express = require('express');
 const app = express();
+
+const db = require('./db');
+
 const path = require('path');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
@@ -23,6 +26,8 @@ app.use('/api', require('./api'));
 app.get('*', (req, res, next) => {
 	res.sendFile(path.join(__dirname, '../public/index.html'))
 })
+
+// sync database
 
 // start server
 app.listen(8080, () => {

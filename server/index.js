@@ -28,11 +28,13 @@ app.get('*', (req, res, next) => {
 })
 
 // sync database
-
-// start server
-app.listen(8080, () => {
-	console.log('server is listening on 8080')
-})
+db.sync()
+	.then(() => {
+		// start server
+		app.listen(8080, () => {
+			console.log('server is listening on 8080')
+		})
+	})
 
 app.use((err, req, res, next) => {
 	console.error(err);

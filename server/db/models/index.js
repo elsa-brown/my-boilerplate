@@ -4,7 +4,7 @@ const Resource = require('./resource');
 
 // Resource gets userId attribte
 // User gets getResources and setResources
-User.hasMany(Resource);
+// User.hasMany(Resource);
 Resource.belongsToMany(User, {through: 'UserResource'});
 User.belongsToMany(Resource, {through: 'UserResource'});
 

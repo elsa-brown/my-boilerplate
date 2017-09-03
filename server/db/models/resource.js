@@ -12,6 +12,9 @@ const Resource = db.define('resource', {
 	},
 	notes: {
 		type: Sequelize.TEXT
+	},
+	readStatus: {
+		type: Sequelize.BOOLEAN
 	}
 });
 

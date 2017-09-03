@@ -4,9 +4,9 @@ const Resource = require('./resource');
 
 // Resource gets userId attribte
 // User gets getResources and setResources
-// User.hasMany(Resource);
-Resource.belongsToMany(User, {through: 'UserResource'});
-User.belongsToMany(Resource, {through: 'UserResource'});
+User.hasMany(Resource);
+// Resource.belongsToMany(User, {through: 'UserResource'});
+// User.belongsToMany(Resource, {through: 'UserResource'});
 
 module.exports = {
 	User, Resource
